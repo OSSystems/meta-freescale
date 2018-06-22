@@ -30,9 +30,10 @@ UBOOT_ENTRYPOINT_mx7 = "0x80008000"
 UBOOT_ENTRYPOINT_vf = "0x80008000"
 
 PREFERRED_PROVIDER_virtual/xserver = "xserver-xorg"
-XSERVER_DRIVER = "xf86-video-fbdev"
-XSERVER_DRIVER_imxgpu2d = "xf86-video-imx-vivante"
-XSERVER_DRIVER_vf = "xf86-video-modesetting"
+XSERVER_DRIVER                  = "xf86-video-fbdev"
+XSERVER_DRIVER_imxgpu2d         = "xf86-video-imx-vivante"
+XSERVER_DRIVER_vf               = "xf86-video-modesetting"
+XSERVER_DRIVER_append_mx8       = " xf86-video-modesetting"
 XSERVER_DRIVER_use-mainline-bsp = "xf86-video-armada"
 XSERVER = "xserver-xorg \
            xf86-input-evdev \
@@ -52,6 +53,7 @@ DEFAULTTUNE_mx6 ?= "cortexa9thf-neon"
 DEFAULTTUNE_mx6ul ?= "cortexa7thf-neon"
 DEFAULTTUNE_mx6ull ?= "cortexa7thf-neon"
 DEFAULTTUNE_mx7 ?= "cortexa7thf-neon"
+DEFAULTTUNE_mx8 ?= "aarch64"
 DEFAULTTUNE_vf ?= "cortexa5thf-neon"
 
 INHERIT += "machine-overrides-extender"
@@ -66,6 +68,7 @@ MACHINEOVERRIDES_EXTENDER_mx6ul  = "imxpxp"
 MACHINEOVERRIDES_EXTENDER_mx6ull = "imxpxp:imxepdc"
 MACHINEOVERRIDES_EXTENDER_mx7d   = "imxpxp:imxepdc"
 MACHINEOVERRIDES_EXTENDER_mx7ulp = "imxpxp:imxgpu:imxgpu2d:imxgpu3d"
+MACHINEOVERRIDES_EXTENDER_mx8mq  = "imxvpu:imxgpu:imxgpu3d"
 
 MACHINEOVERRIDES_EXTENDER_FILTER_OUT_use-mainline-bsp = " \
     mx6 \
@@ -97,6 +100,7 @@ MACHINE_SOCARCH_SUFFIX_vf60 = "-vf60"
 MACHINE_SOCARCH_SUFFIX_vf50 = "-vf50"
 MACHINE_SOCARCH_SUFFIX_mx6ul  = "-mx6ul"
 MACHINE_SOCARCH_SUFFIX_mx6ull = "-mx6ul"
+MACHINE_SOCARCH_SUFFIX_mx8mq  = "-mx8m"
 MACHINE_SOCARCH_SUFFIX_use-mainline-bsp = "-imx"
 
 MACHINE_ARCH_FILTER = "virtual/kernel"
