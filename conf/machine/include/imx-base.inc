@@ -102,6 +102,7 @@ MACHINE_SOCARCH_SUFFIX_use-mainline-bsp = "-imx"
 MACHINE_ARCH_FILTER = "virtual/kernel"
 MACHINE_SOCARCH_FILTER_append_imx = " \
     alsa-lib \
+    weston \
 "
 MACHINE_SOCARCH_FILTER_append_imxvpu = " \
     imx-codec \
@@ -118,7 +119,6 @@ MACHINE_SOCARCH_FILTER_append_imxgpu = " \
     gstreamer1.0-plugins-bad \
     libgal-imx \
     pango \
-    weston \
 "
 MACHINE_SOCARCH_FILTER_append_imxgpu2d = " \
 ￼    virtual/libg2d \
