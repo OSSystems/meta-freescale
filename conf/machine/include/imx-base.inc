@@ -246,8 +246,9 @@ PREFERRED_PROVIDER_virtual/libg2d_mx6ul = ""
 PREFERRED_PROVIDER_virtual/libg2d_mx6ull = ""
 PREFERRED_PROVIDER_virtual/libg2d_mx7ulp ?= "imx-gpu-viv"
 
-PREFERRED_VERSION_weston_mx6 ?= "2.0.0"
-PREFERRED_VERSION_weston_mx7 ?= "2.0.0"
+PREFERRED_VERSION_weston_mx6 ?= "4.0.0.imx"
+PREFERRED_VERSION_weston_mx7 ?= "4.0.0.imx"
+PREFERRED_VERSION_weston_mx8 ?= "4.0.0.imx"
 
 # Handle default kernel
 IMX_DEFAULT_KERNEL = "linux-imx"
