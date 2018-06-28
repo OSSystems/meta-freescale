@@ -51,6 +51,8 @@ RDEPENDS_${PN} += "libvivante-dri-imx \
                    xserver-xorg-extension-dri \
                    xserver-xorg-extension-dri2 \
                    xserver-xorg-extension-glx"
+RDEPENDS_${PN}_remove_mx8mq = "xserver-xorg-extension-glx"
+RDEPENDS_${PN}_append_mx8 = " kernel-module-vivante"
 
 REALSOLIBS := "${SOLIBS}"
 SOLIBS = "${SOLIBSDEV}"
@@ -62,4 +64,4 @@ FILES_${PN}-dbg = "${libdir}/*/*/*/.debug ${libdir}/.debug/libfsl_x11_ext${SOLIB
 FILES_xserver-xorg-extension-viv-autohdmi = " ${libdir}/libfsl_x11_ext${SOLIBS} ${exec_prefix}/bin/autohdmi ${sysconfdir}/init.d/rc.autohdmi"
 
 PACKAGE_ARCH = "${MACHINE_SOCARCH}"
-COMPATIBLE_MACHINE = "(mx6|mx7ulp)"
+COMPATIBLE_MACHINE = "(mx6|mx7ulp|mx8)"
